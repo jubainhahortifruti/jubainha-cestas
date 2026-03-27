@@ -53,7 +53,19 @@
     color: white;
   }
   .hero h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 6px; }
-  .hero p { font-size: 13px; opacity: 0.85; font-weight: 300; }
+  .hero p { font-size: 14px; opacity: 0.96; font-weight: 400; max-width: 520px; margin: 0 auto; }
+  .hero-urgency {
+    margin: 14px auto 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+  }
   .pills { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
   .pill {
     background: rgba(255,255,255,0.18);
@@ -62,7 +74,7 @@
     font-size: 11px;
     padding: 4px 12px;
     border-radius: 20px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .tabs {
@@ -114,11 +126,20 @@
     padding: 3px 10px; border-radius: 20px;
     margin-bottom: 6px;
   }
-  .card-name { font-family: 'Playfair Display', serif; font-size: 20px; }
-  .card-for { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .card-name { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.1; }
+  .card-for { font-size: 12px; color: var(--muted); margin-top: 4px; }
   .card-price { text-align: right; }
   .price-val { font-size: 26px; font-weight: 500; color: var(--text); }
   .price-per { font-size: 11px; color: var(--muted); display: block; }
+  .price-anchor {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--amber);
+    background: var(--amber-claro);
+    border-radius: 10px;
+    padding: 4px 8px;
+    display: inline-block;
+  }
   .price-frete {
     font-size: 11px; font-weight: 500; color: var(--verde);
     background: var(--verde-claro); padding: 2px 8px; border-radius: 10px;
@@ -153,7 +174,7 @@
   .whatsapp-btn {
     display: flex; align-items: center; justify-content: center; gap: 10px;
     width: 100%;
-    background: #25D366;
+    background: #20bf5a;
     color: white;
     border: none;
     border-radius: 12px;
@@ -164,9 +185,10 @@
     font-family: 'DM Sans', sans-serif;
     transition: background 0.15s;
   }
-  .whatsapp-btn:hover { background: #1ebe5a; }
+  .whatsapp-btn:hover { background: #18a84e; }
   .whatsapp-icon { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
   .btn-note { font-size: 11px; text-align: center; color: var(--muted); margin-top: 8px; }
+  .btn-note strong { color: var(--verde-escuro); }
 
   .overview {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
@@ -204,10 +226,12 @@
 
 <div class="hero">
   <h2>Cestas de Assinatura Semanal</h2>
-  <p>Produtos fresquinhos e selecionados diariamente</p>
+  <p>Mais saúde, praticidade e tempo livre pra sua família</p>
+  <div class="hero-urgency">⏰ Peça até às 15h e receba amanhã pela manhã</div>
   <div class="pills">
     <span class="pill">Frete grátis</span>
     <span class="pill">Produtos fresquinhos e selecionados</span>
+    <span class="pill">Assinatura prática</span>
   </div>
 </div>
 
@@ -231,6 +255,7 @@
       <div class="card-price">
         <div class="price-val">R$99<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
+        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -264,11 +289,11 @@
       </div>
     </div>
     <div class="card-bottom">
-      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Olá!%20Gostaria%20de%20assinar%20a%20Cesta%20Verde%20por%20R%2499%2C90%2Fsemana%20%F0%9F%8C%BF" target="_blank">
+      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Ol%C3%A1%21%20Quero%20assinar%20a%20Cesta%20Verde%20%F0%9F%A5%AC%0A%0A%F0%9F%93%8D%20Bairro%3A%0A%F0%9F%93%85%20Melhor%20dia%20de%20entrega%3A%0A%F0%9F%92%B3%20Forma%20de%20pagamento%3A" target="_blank">
         <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero assinar esta cesta
+        Quero receber essa cesta 🥬
       </a>
-      <p class="btn-note">Você será direcionado ao WhatsApp da Jubainha</p>
+      <p class="btn-note">Sem compromisso • Você pode pausar quando quiser</p>
     </div>
   </div>
 
@@ -277,12 +302,14 @@
     <div class="card-top">
       <div>
         <span class="badge" style="background:var(--azul-claro);color:var(--azul);">Para 2–3 pessoas</span>
+        <span class="badge" style="background:#ffe8a3;color:#8a5b00;">🔥 Mais escolhida</span>
         <div class="card-name">Cesta Horta</div>
         <div class="card-for">Mais variedade e sabor — 15 itens</div>
       </div>
       <div class="card-price">
         <div class="price-val">R$149<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
+        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -318,11 +345,11 @@
       </div>
     </div>
     <div class="card-bottom">
-      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Olá!%20Gostaria%20de%20assinar%20a%20Cesta%20Horta%20por%20R%24149%2C90%2Fsemana%20%F0%9F%8C%BF" target="_blank">
+      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Ol%C3%A1%21%20Quero%20assinar%20a%20Cesta%20Horta%20%F0%9F%A5%AC%0A%0A%F0%9F%93%8D%20Bairro%3A%0A%F0%9F%93%85%20Melhor%20dia%20de%20entrega%3A%0A%F0%9F%92%B3%20Forma%20de%20pagamento%3A" target="_blank">
         <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero assinar esta cesta
+        Quero receber essa cesta 🥬
       </a>
-      <p class="btn-note">Você será direcionado ao WhatsApp da Jubainha</p>
+      <p class="btn-note">Sem compromisso • Você pode pausar quando quiser</p>
     </div>
   </div>
 
@@ -330,6 +357,7 @@
   <div class="plan-card" id="card-2">
     <div class="card-top">
       <div>
+        <span class="badge" style="background:#ffe8a3;color:#8a5b00;">🔥 Mais escolhida</span>
         <span class="badge" style="background:var(--amber-claro);color:var(--amber);">Para 3–5 pessoas</span>
         <div class="card-name">Cesta Família</div>
         <div class="card-for">Completa para toda a casa — 21 itens</div>
@@ -337,6 +365,7 @@
       <div class="card-price">
         <div class="price-val">R$199<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
+        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -388,11 +417,11 @@
       </div>
     </div>
     <div class="card-bottom">
-      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Olá!%20Gostaria%20de%20assinar%20a%20Cesta%20Família%20por%20R%24199%2C90%2Fsemana%20%F0%9F%8C%BF" target="_blank">
+      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Ol%C3%A1%21%20Quero%20assinar%20a%20Cesta%20Fam%C3%ADlia%20%F0%9F%A5%AC%0A%0A%F0%9F%93%8D%20Bairro%3A%0A%F0%9F%93%85%20Melhor%20dia%20de%20entrega%3A%0A%F0%9F%92%B3%20Forma%20de%20pagamento%3A" target="_blank">
         <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero assinar esta cesta
+        Quero receber essa cesta 🥬
       </a>
-      <p class="btn-note">Você será direcionado ao WhatsApp da Jubainha</p>
+      <p class="btn-note">Sem compromisso • Você pode pausar quando quiser</p>
     </div>
   </div>
 
@@ -407,6 +436,7 @@
       <div class="card-price">
         <div class="price-val">R$299<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
+        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -462,11 +492,11 @@
       </div>
     </div>
     <div class="card-bottom">
-      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Olá!%20Gostaria%20de%20assinar%20a%20Cesta%20Premium%20por%20R%24299%2C90%2Fsemana%20%F0%9F%8C%BF" target="_blank">
+      <a class="whatsapp-btn" href="https://wa.me/5585981801026?text=Ol%C3%A1%21%20Quero%20assinar%20a%20Cesta%20Premium%20%F0%9F%A5%AC%0A%0A%F0%9F%93%8D%20Bairro%3A%0A%F0%9F%93%85%20Melhor%20dia%20de%20entrega%3A%0A%F0%9F%92%B3%20Forma%20de%20pagamento%3A" target="_blank">
         <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero assinar esta cesta
+        Quero receber essa cesta 🥬
       </a>
-      <p class="btn-note">Você será direcionado ao WhatsApp da Jubainha</p>
+      <p class="btn-note">Sem compromisso • Você pode pausar quando quiser</p>
     </div>
   </div>
 
@@ -475,7 +505,7 @@
 <footer>
   <p>Jubainha Hortifruti · (85) 9 8180.1026</p>
   <p style="margin-top:4px;"><a href="https://www.instagram.com/jubainhahortifruti">@jubainhahortifruti</a></p>
-  <p style="margin-top:8px; font-size:11px;">Produtos fresquinhos e selecionados</p>
+  <p style="margin-top:8px; font-size:11px;">Seu hortifruti fresquinho, sem fila e sem carregar sacolas</p>
 </footer>
 
 <script>
