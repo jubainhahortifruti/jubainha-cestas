@@ -205,6 +205,40 @@
   .ov-price { font-size: 16px; font-weight: 500; margin-top: 6px; }
   .ov-itens { font-size: 11px; color: var(--muted); }
 
+
+  .how-it-works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0 0 1rem;
+  }
+  .how-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+  }
+  .how-step {
+    width: 28px; height: 28px;
+    border-radius: 999px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .how-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .how-text { font-size: 11px; color: var(--muted); line-height: 1.35; }
+
+  @media (max-width: 640px) {
+    .how-it-works { grid-template-columns: 1fr; }
+    .card-top { gap: 14px; }
+  }
+
   footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -244,6 +278,24 @@
 
 <div class="content">
 
+  <div class="how-it-works">
+    <div class="how-card">
+      <div class="how-step">1</div>
+      <div class="how-title">Escolha sua cesta</div>
+      <div class="how-text">Compare os planos e selecione a opção ideal para sua casa.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-step">2</div>
+      <div class="how-title">Fale no WhatsApp</div>
+      <div class="how-text">Seu pedido já abre com a cesta escolhida e os dados para agilizar o atendimento.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-step">3</div>
+      <div class="how-title">Receba em casa</div>
+      <div class="how-text">Peça até 15h e receba tudo fresquinho no dia seguinte pela manhã.</div>
+    </div>
+  </div>
+
   <!-- CESTA VERDE -->
   <div class="plan-card active" id="card-0">
     <div class="card-top">
@@ -255,7 +307,7 @@
       <div class="card-price">
         <div class="price-val">R$99<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
-        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
+        <div class="price-anchor">💰 Mais praticidade e economia no seu hortifruti da semana</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -302,14 +354,13 @@
     <div class="card-top">
       <div>
         <span class="badge" style="background:var(--azul-claro);color:var(--azul);">Para 2–3 pessoas</span>
-        <span class="badge" style="background:#ffe8a3;color:#8a5b00;">🔥 Mais escolhida</span>
         <div class="card-name">Cesta Horta</div>
         <div class="card-for">Mais variedade e sabor — 15 itens</div>
       </div>
       <div class="card-price">
         <div class="price-val">R$149<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
-        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
+        <div class="price-anchor">💰 Mais praticidade e economia no seu hortifruti da semana</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -357,15 +408,15 @@
   <div class="plan-card" id="card-2">
     <div class="card-top">
       <div>
-        <span class="badge" style="background:#ffe8a3;color:#8a5b00;">🔥 Mais escolhida</span>
         <span class="badge" style="background:var(--amber-claro);color:var(--amber);">Para 3–5 pessoas</span>
+        <span class="badge" style="background:#ffe8a3;color:#8a5b00;">🔥 Mais escolhida</span>
         <div class="card-name">Cesta Família</div>
         <div class="card-for">Completa para toda a casa — 21 itens</div>
       </div>
       <div class="card-price">
         <div class="price-val">R$199<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
-        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
+        <div class="price-anchor">💰 Mais praticidade e economia no seu hortifruti da semana</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
@@ -436,7 +487,7 @@
       <div class="card-price">
         <div class="price-val">R$299<span style="font-size:16px">,90</span></div>
         <span class="price-per">/semana</span>
-        <div class="price-anchor">💰 Equivalente a compras maiores na feira</div>
+        <div class="price-anchor">💰 Mais praticidade e economia no seu hortifruti da semana</div>
         <div class="price-frete">Frete grátis</div>
       </div>
     </div>
